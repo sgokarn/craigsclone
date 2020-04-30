@@ -1,0 +1,545 @@
+{% load static %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Craigslist Clone</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="{% static 'clone_app/style.css'%}">
+    <link rel="stylesheet" href="{% static 'clone_app/assets/bootstrap/css/bootstrap.min.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'clone_app/assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'clone_app/assets/fonts/simple-line-icons.min.css' %}">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+
+
+    <body id="page-top"><a class="menu-toggle rounded" href="#"><i class="fa fa-bars"></i></a>
+    <nav class="navbar navbar-light navbar-expand" id="sidebar-wrapper">
+        <div class="container"><button data-toggle="collapse" class="navbar-toggler d-none" data-target="#"></button>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav sidebar-nav" id="sidebar-nav">
+                    <li class="nav-item sidebar-brand" role="presentation"><a class="nav-link active js-scroll-trigger" href="#page-top">Spidey's Craig</a></li>
+                    <li class="nav-item sidebar-nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#page-top">Home</a></li>
+                    <li class="nav-item sidebar-nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#craigslist">Craigslist</a></li>
+                    <li class="nav-item sidebar-nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="d-flex masthead" style="background-image:url('{% static 'clone_app/spider-new.jpg' %}');">
+        <div class="container my-auto text-center">
+            <h2 class="mb-1 home-heading">What do you want to search for on Spidey's Craig Clone?</h2>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <span class="mx-auto service-icon rounded-circle mb-3">
+                        <i class="fas fa-spider"></i>
+                    </span>
+                    <h4><strong>Responsive</strong></h4>
+                    <p class="mb-0 text-faded">Fast Craigslist web scraper!</p>
+                </div>
+                <div class="col-sm-4">
+                    <span class="mx-auto service-icon rounded-circle mb-3">
+                        <i class="icon-pencil"></i></span>
+                    <h4><strong>Filters</strong></h4>
+                    <p class="mb-0 text-faded">Pricing based filter</p>
+                </div>
+                <div class="col-sm-4">
+                    <span class="mx-auto service-icon rounded-circle mb-3">
+                        <i class="icon-like"></i></span>
+                    <h4><strong>User Friendly</strong></h4>
+                    <p class="mb-0 text-faded">Spidey built a better front-end to the existing Craigslist.</p>
+
+                </div>
+
+            </div>
+            <br>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" role="button" href="#craigslist">Find Out More</a>
+            <div class="overlay"></div>
+        </div>
+    </header>
+    <section id="craigslist" class="content-section bg-light" style="background-image:url('{% static 'clone_app/web.jpg' %}'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <div class="container text-center">
+            <div class="row">
+
+                <div class="col-lg-10 mx-auto sec-title" style="float: left; display: flex;">
+                    <img src="{% static 'clone_app/logo.jpeg'%}" style="width: 10%;"/>
+                    <h2>Spidey's US Craigslist</h2>
+                </div>
+            </div>
+
+
+            <div class="row cities">
+                <div class="col-sm-2">
+                    <div class="center">
+                    <h4>Alabama</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="auburn"></li>
+                                    <li><input type='submit' name='destination' value="birmingham"></li>
+                                    <li><input type='submit' name='destination' value="dothan"></li>
+                                    <li><input type='submit' name='destination' value="gadsden"></li>
+                                    <li><input type='submit' name='destination' value="huntsville"></li>
+                                    <li><input type='submit' name='destination' value="montgomery"></li>
+                                    <li><input type='submit' name='destination' value="tuscaloosa"></li>
+                                </ul>
+                            </form>
+                    <h4>Connecticut</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="newlondon"></li>
+                                    <li><input type='submit' name='destination' value="hartford"></li>
+                                    <li><input type='submit' name='destination' value="newhaven"></li>
+                                    <li><input type='submit' name='destination' value="nwct"></li>
+                                </ul>
+                            </form>
+                    <h4>Illinois</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="chambana"></li>
+                                    <li><input type='submit' name='destination' value="chicago"></li>
+                                    <li><input type='submit' name='destination' value="decatur"></li>
+                                    <li><input type='submit' name='destination' value="lasalle"></li>
+                                    <li><input type='submit' name='destination' value="mattoon"></li>
+                                    <li><input type='submit' name='destination' value="peoria"></li>
+                                    <li><input type='submit' name='destination' value="rockford"></li>
+                                    <li><input type='submit' name='destination' value="carbondale"></li>
+                                    <li><input type='submit' name='destination' value="springfieldil"></li>
+                                    <li><input type='submit' name='destination' value="quincy"></li>
+                                </ul>
+                            </form>
+                    <h4>Maine</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="maine"></li>
+                                </ul>
+                            </form>
+                    <h4>Michigan</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="annarbor"></li>
+                                    <li><input type='submit' name='destination' value="battlecreek"></li>
+                                    <li><input type='submit' name='destination' value="centralmich"></li>
+                                    <li><input type='submit' name='destination' value="detroit"></li>
+                                    <li><input type='submit' name='destination' value="holland"></li>
+                                    <li><input type='submit' name='destination' value="monroemi"></li>
+                                    <li><input type='submit' name='destination' value="muskegon"></li>
+                                    <li><input type='submit' name='destination' value="porthuron"></li>
+                                </ul>
+                            </form>
+                    <h4>Pennsylvania</h4>
+                                <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="altoona"></li>
+                                    <li><input type='submit' name='destination' value="chambersburg"></li>
+                                    <li><input type='submit' name='destination' value="lancaster"></li>
+                                    <li><input type='submit' name='destination' value="philadelphia"></li>
+                                    <li><input type='submit' name='destination' value="pittsburgh"></li>
+                                    <li><input type='submit' name='destination' value="scranton"></li>
+                                    <li><input type='submit' name='destination' value="pennstate"></li>
+                                </ul>
+                            </form>
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <div class="center">
+                    <h4>Alaska</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="anchorage"></li>
+                                    <li><input type='submit' name='destination' value="fairbanks"></li>
+                                    <li><input type='submit' name='destination' value="kenai"></li>
+                                    <li><input type='submit' name='destination' value="juneau"></li>
+                                </ul>
+                            </form>
+                    <h4>Delaware</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="delaware"></li>
+                                </ul>
+                            </form>
+                    <h4>District of Columbia</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="washingtondc"></li>
+                                </ul>
+                            </form>
+                    <h4>Indiana</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="bloomington"></li>
+                                    <li><input type='submit' name='destination' value="evansville"></li>
+                                    <li><input type='submit' name='destination' value="fortwayne"></li>
+                                    <li><input type='submit' name='destination' value="indianapolis"></li>
+                                    <li><input type='submit' name='destination' value="kokomo"></li>
+                                    <li><input type='submit' name='destination' value="tippecanoe"></li>
+                                    <li><input type='submit' name='destination' value="muncie"></li>
+                                    <li><input type='submit' name='destination' value="richmondin"></li>
+                                    <li><input type='submit' name='destination' value="southbend"></li>
+                                    <li><input type='submit' name='destination' value="terrehaute"></li>
+                                </ul>
+                            </form>
+                    <h4>Maryland</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="annapolis"></li>
+                                    <li><input type='submit' name='destination' value="baltimore"></li>
+                                    <li><input type='submit' name='destination' value="easternshore"></li>
+                                    <li><input type='submit' name='destination' value="frederick"></li>
+                                    <li><input type='submit' name='destination' value="westmd"></li>
+                                </ul>
+                            </form>
+                    <h4>Minnesota</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="bemidji"></li>
+                                    <li><input type='submit' name='destination' value="brainerd"></li>
+                                    <li><input type='submit' name='destination' value="duluth"></li>
+                                    <li><input type='submit' name='destination' value="mankato"></li>
+                                    <li><input type='submit' name='destination' value="minneapolis"></li>
+                                </ul>
+                            </form>
+                    <h4>Tennessee</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="chattanooga"></li>
+                                    <li><input type='submit' name='destination' value="clarksville"></li>
+                                    <li><input type='submit' name='destination' value="knoxville"></li>
+                                    <li><input type='submit' name='destination' value="nashville"></li>
+                                    <li><input type='submit' name='destination' value="jacksontn"></li>
+                                </ul>
+                            </form>
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <div class="center">
+                    <h4>Arizona</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="mohave"></li>
+                                    <li><input type='submit' name='destination' value="phoenix"></li>
+                                    <li><input type='submit' name='destination' value="prescott"></li>
+                                    <li><input type='submit' name='destination' value="showlow"></li>
+                                    <li><input type='submit' name='destination' value="sierravista"></li>
+                                    <li><input type='submit' name='destination' value="tucson"></li>
+                                    <li><input type='submit' name='destination' value="yuma"></li>
+                                </ul>
+                            </form>
+                    <h4>Florida</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="miami"></li>
+                                    <li><input type='submit' name='destination' value="daytona"></li>
+                                    <li><input type='submit' name='destination' value="fortlauderdale"></li>
+                                    <li><input type='submit' name='destination' value="fortmyers"></li>
+                                    <li><input type='submit' name='destination' value="gainesville"></li>
+                                    <li><input type='submit' name='destination' value="jacksonville"></li>
+                                    <li><input type='submit' name='destination' value="lakeland"></li>
+                                    <li><input type='submit' name='destination' value="ocala"></li>
+                                    <li><input type='submit' name='destination' value="okaloosa"></li>
+                                    <li><input type='submit' name='destination' value="orlando"></li>
+                                    <li><input type='submit' name='destination' value="panamacity"></li>
+                                    <li><input type='submit' name='destination' value="pensacola"></li>
+                                    <li><input type='submit' name='destination' value="sarasota"></li>
+                                    <li><input type='submit' name='destination' value="staugustine"></li>
+                                    <li><input type='submit' name='destination' value="tallahassee"></li>
+                                    <li><input type='submit' name='destination' value="tampa"></li>
+                                    <li><input type='submit' name='destination' value="treasure"></li>
+                                </ul>
+                            </form>
+                    <h4>New York</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="albany"></li>
+                                    <li><input type='submit' name='destination' value="binghamton"></li>
+                                    <li><input type='submit' name='destination' value="buffalo"></li>
+                                    <li><input type='submit' name='destination' value="chautauqua"></li>
+                                    <li><input type='submit' name='destination' value="fingerlakes"></li>
+                                    <li><input type='submit' name='destination' value="hudsonvalley"></li>
+                                    <li><input type='submit' name='destination' value="ithaca"></li>
+                                    <li><input type='submit' name='destination' value="newyork"></li>
+                                    <li><input type='submit' name='destination' value="oneonta"></li>
+                                    <li><input type='submit' name='destination' value="rochester"></li>
+                                    <li><input type='submit' name='destination' value="syracuse"></li>
+                                </ul>
+                            </form>
+                    <h4>Texas</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="abilene"></li>
+                                    <li><input type='submit' name='destination' value="amarillo"></li>
+                                    <li><input type='submit' name='destination' value="austin"></li>
+                                    <li><input type='submit' name='destination' value="brownsville"></li>
+                                    <li><input type='submit' name='destination' value="dallas"></li>
+                                    <li><input type='submit' name='destination' value="nacogdoches"></li>
+                                    <li><input type='submit' name='destination' value="houston"></li>
+                                    <li><input type='submit' name='destination' value="sanantonio"></li>
+                                    <li><input type='submit' name='destination' value="easttexas"></li>
+                                </ul>
+                            </form>
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <div class="center">
+                    <h4>Arkansas</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="fayar"></li>
+                                    <li><input type='submit' name='destination' value="fortsmith"></li>
+                                    <li><input type='submit' name='destination' value="jonesboro"></li>
+                                    <li><input type='submit' name='destination' value="littlerock"></li>
+                                    <li><input type='submit' name='destination' value="texarkana"></li>
+                                </ul>
+                            </form>
+                    <h4>Georgia</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="albanyga"></li>
+                                    <li><input type='submit' name='destination' value="athensga"></li>
+                                    <li><input type='submit' name='destination' value="atlanta"></li>
+                                    <li><input type='submit' name='destination' value="augusta"></li>
+                                    <li><input type='submit' name='destination' value="brunswick"></li>
+                                    <li><input type='submit' name='destination' value="columbusga"></li>
+                                    <li><input type='submit' name='destination' value="macon"></li>
+                                    <li><input type='submit' name='destination' value="savannah"></li>
+                                    <li><input type='submit' name='destination' value="statesboro"></li>
+                                    <li><input type='submit' name='destination' value="valdosta"></li>
+                                </ul>
+                            </form>
+                    <h4>Iowa</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="ames"></li>
+                                    <li><input type='submit' name='destination' value="cedarrapids"></li>
+                                    <li><input type='submit' name='destination' value="desmoines"></li>
+                                    <li><input type='submit' name='destination' value="dubuque"></li>
+                                    <li><input type='submit' name='destination' value="fortdodge"></li>
+                                    <li><input type='submit' name='destination' value="iowacity"></li>
+                                    <li><input type='submit' name='destination' value="masoncity"></li>
+                                    <li><input type='submit' name='destination' value="quadcities"></li>
+                                    <li><input type='submit' name='destination' value="siouxcity"></li>
+                                    <li><input type='submit' name='destination' value="ottumwa"></li>
+                                </ul>
+                            </form>
+                    <h4>New Jersey</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="jerseyshore"></li>
+                                    <li><input type='submit' name='destination' value="newjersey"></li>
+                                    <li><input type='submit' name='destination' value="southjersey"></li>
+                                </ul>
+                            </form>
+                    <h4>Nevada</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="elko"></li>
+                                    <li><input type='submit' name='destination' value="lasvegas"></li>
+                                    <li><input type='submit' name='destination' value="reno"></li>
+                                </ul>
+                            </form>
+                    <h4>Utah</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="logan"></li>
+                                    <li><input type='submit' name='destination' value="ogden"></li>
+                                    <li><input type='submit' name='destination' value="saltlakecity"></li>
+                                </ul>
+                            </form>
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <div class="center">
+                    <h4>California</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="bakersfield"></li>
+                                    <li><input type='submit' name='destination' value="chico"></li>
+                                    <li><input type='submit' name='destination' value="fresno"></li>
+                                    <li><input type='submit' name='destination' value="goldcountry"></li>
+                                    <li><input type='submit' name='destination' value="hanford"></li>
+                                    <li><input type='submit' name='destination' value="humboldt"></li>
+                                    <li><input type='submit' name='destination' value="imperial"></li>
+                                    <li><input type='submit' name='destination' value="inlandempire"></li>
+                                    <li><input type='submit' name='destination' value="losangeles"></li>
+                                    <li><input type='submit' name='destination' value="mendocino"></li>
+                                    <li><input type='submit' name='destination' value="merced"></li>
+                                    <li><input type='submit' name='destination' value="modesto"></li>
+                                    <li><input type='submit' name='destination' value="monterey"></li>
+                                    <li><input type='submit' name='destination' value="orangecounty"></li>
+                                    <li><input type='submit' name='destination' value="palmsprings"></li>
+                                    <li><input type='submit' name='destination' value="redding"></li>
+                                    <li><input type='submit' name='destination' value="sacramento"></li>
+                                    <li><input type='submit' name='destination' value="sandiego"></li>
+                                    <li><input type='submit' name='destination' value="sfbay"></li>
+                                    <li><input type='submit' name='destination' value="santabarbara"></li>
+                                    <li><input type='submit' name='destination' value="santamaria"></li>
+                                    <li><input type='submit' name='destination' value="susanville"></li>
+                                    <li><input type='submit' name='destination' value="ventura"></li>
+                                    <li><input type='submit' name='destination' value="yubasutter"></li>
+                                </ul>
+                            </form>
+                    <h4>Kentucky</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="eastky"></li>
+                                    <li><input type='submit' name='destination' value="lexington"></li>
+                                    <li><input type='submit' name='destination' value="louisville"></li>
+                                    <li><input type='submit' name='destination' value="owensboro"></li>
+                                    <li><input type='submit' name='destination' value="westky"></li>
+                                </ul>
+                            </form>
+                    <h4>Ohio</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="akroncanton"></li>
+                                    <li><input type='submit' name='destination' value="cincinnati"></li>
+                                    <li><input type='submit' name='destination' value="cleveland"></li>
+                                    <li><input type='submit' name='destination' value="columbus"></li>
+                                    <li><input type='submit' name='destination' value="zanesville"></li>
+                                </ul>
+                            </form>
+                    <h4>Virginia</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="charlottesville"></li>
+                                    <li><input type='submit' name='destination' value="danville"></li>
+                                    <li><input type='submit' name='destination' value="fredericksburg"></li>
+                                    <li><input type='submit' name='destination' value="harrisonburg"></li>
+                                    <li><input type='submit' name='destination' value="lynchburg"></li>
+                                    <li><input type='submit' name='destination' value="richmond"></li>
+                                </ul>
+                            </form>
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <div class="center">
+                    <h4>Colorado</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="boulder"></li>
+                                    <li><input type='submit' name='destination' value="cosprings"></li>
+                                    <li><input type='submit' name='destination' value="denver"></li>
+                                    <li><input type='submit' name='destination' value="eastco"></li>
+                                    <li><input type='submit' name='destination' value="fortcollins"></li>
+                                    <li><input type='submit' name='destination' value="rockies"></li>
+                                    <li><input type='submit' name='destination' value="pueblo"></li>
+                                    <li><input type='submit' name='destination' value="westslope"></li>
+                                </ul>
+                            </form>
+                    <h4>Hawaii</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="honolulu"></li>
+                                </ul>
+                            </form>
+                    <h4>Idaho</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="boise"></li>
+                                    <li><input type='submit' name='destination' value="eastidaho"></li>
+                                    <li><input type='submit' name='destination' value="lewiston"></li>
+                                    <li><input type='submit' name='destination' value="twinfalls"></li>
+                                </ul>
+                            </form>
+                    <h4>Kansas</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="lawrence"></li>
+                                    <li><input type='submit' name='destination' value="salina"></li>
+                                    <li><input type='submit' name='destination' value="topeka"></li>
+                                    <li><input type='submit' name='destination' value="wichita"></li>
+                                </ul>
+                            </form>
+                    <h4>Louisiana</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="batonrouge"></li>
+                                    <li><input type='submit' name='destination' value="cenla"></li>
+                                    <li><input type='submit' name='destination' value="houma"></li>
+                                    <li><input type='submit' name='destination' value="lafayette"></li>
+                                    <li><input type='submit' name='destination' value="lakecharles"></li>
+                                    <li><input type='submit' name='destination' value="monroe"></li>
+                                    <li><input type='submit' name='destination' value="neworleans"></li>
+                                    <li><input type='submit' name='destination' value="shreveport"></li>
+                                </ul>
+                            </form>
+                    <h4>Oregon</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="eastoregon"></li>
+                                    <li><input type='submit' name='destination' value="oregoncoast"></li>
+                                    <li><input type='submit' name='destination' value="portland"></li>
+                                    <li><input type='submit' name='destination' value="roseburg"></li>
+                                    <li><input type='submit' name='destination' value="salem"></li>
+                                </ul>
+                            </form>
+                    <h4>Washington</h4>
+                            <form action="{% url 'clone-city' %}" method="post">
+                                {% csrf_token %}
+                                <ul>
+                                    <li><input type='submit' name='destination' value="bellingham"></li>
+                                    <li><input type='submit' name='destination' value="moseslake"></li>
+                                    <li><input type='submit' name='destination' value="olympic"></li>
+                                    <li><input type='submit' name='destination' value="spokane"></li>
+                                    <li><input type='submit' name='destination' value="wenatchee"></li>
+                                </ul>
+                            </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <script src="{% static 'clone_app/assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'clone_app/assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="{% static 'clone_app/assets/js/stylish-portfolio.js' %}"></script>
+
+</body>
+</html>

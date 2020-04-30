@@ -1,0 +1,111 @@
+body{
+    font-family: 'Bangers', cursive !important;
+}
+
+i{
+    line-height: 3 !important;
+}
+
+.masthead h2.home-heading{
+    color: #c3222a !important;
+    margin-top: -103px;
+    margin-bottom: 20rem !important;
+
+}
+
+.masthead h2{
+    color: #c3222a !important;
+    margin-top: -103px;
+    font-family: 'Bangers', cursive;
+}
+
+.form-control{
+    background-color: #e8e8e8c9 !important;
+}
+
+.masthead strong{
+    color: #c3222a !important;
+    font-family: 'Bangers', cursive;
+}
+
+.sec-title h2, .cities h4{
+    color: #c3222a !important;
+}
+
+.sec-title h2{
+    margin-top: 40px;
+}
+
+.cities ul{
+    list-style: none;
+    padding-left: 0px;
+}
+
+li input{
+    background-color: transparent;
+    color: #1c809f;
+    border: none;
+}
+
+#craigslist.content-section{
+    padding-top: 4.5rem;
+}
+
+.marg-top{
+    margin-top: 20px;
+}
+
+.card-image img{
+    height: 300px !important;
+}
+
+.card{
+    margin: .5rem 0 1rem 0;
+}
+
+.card .card-image {
+    position: relative;
+}
+
+.card .card-image img {
+    display: block;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.card .card-content {
+    padding: 24px;
+    border-radius: 0 0 2px 2px;
+    background-color: #e8e8e8c9 !important;
+}
+
+.card .card-content p {
+    margin: 0;
+}
+
+.card .card-action:last-child {
+    border-radius: 0 0 2px 2px;
+}
+.card .card-action {
+    background-color: #e8e8e8c9 !important;
+    border-top: 1px solid rgba(160,160,160,0.2);
+    position: relative;
+    padding: 16px 24px;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    color: #ffab40;
+    margin-right: 24px;
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+}
